@@ -1,0 +1,72 @@
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+}
+
+.form-input {
+  position: relative;
+  border-bottom: 2px solid #000000;
+  margin: 30px 0;
+}
+
+.form-input input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.form-input label {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  color: #efeeed;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-input input:focus ~ label {
+  top: -2px;
+  color: #333333;
+}
+
+.button {
+  position: relative;
+  height: 60px;
+}
+
+.btn {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+
+  background-color: #00c8b3;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.button:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  color: #dddcdc;
+  background-color: #f6f6f6;
+}
+
