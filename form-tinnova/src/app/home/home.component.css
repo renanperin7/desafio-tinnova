@@ -1,0 +1,11 @@
+.container {
+  margin: auto;
+  width: 500px;
+}
+
+
+h1 {
+  color: #00c8b3;
+  font-size: 120px;
+  font-style: italic;
+}

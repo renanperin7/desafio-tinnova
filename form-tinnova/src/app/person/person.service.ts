@@ -5,7 +5,7 @@ import { Person } from './person';
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class PersonService {
 
   private readonly API = 'https://private-9d65b3-tinnova.apiary-mock.com/users'
 
@@ -13,5 +13,9 @@ export class FormService {
 
   list() {
     return this.http.get<Person[]>(this.API)
+  }
+
+  postPerson(person: Person) {
+    return this.http.post(`${this.API}/localStorage/IndexedDB`, person)
   }
 }

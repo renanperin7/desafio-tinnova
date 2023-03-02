@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormService } from '../form.service';
+import { PersonService } from '../person.service';
 import { Person } from '../person';
 
 @Component({
@@ -11,9 +11,9 @@ export class PersonListComponent {
 
   pessoas: Person[] = []
 
-  constructor(private formService: FormService) {}
+  constructor(private personService: PersonService) {}
 
   ngOnInit() {
-    this.formService.list().subscribe(res => this.pessoas = res)
+    this.personService.list().subscribe(res => this.pessoas = res)
   }
 }

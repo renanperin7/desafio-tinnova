@@ -1,6 +1,6 @@
 form {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 320px;
@@ -8,39 +8,32 @@ form {
 
 .form-input {
   position: relative;
-  border-bottom: 2px solid #000000;
-  margin: 30px 0;
+  border-bottom: 1px solid #000000;
+  margin: 40px 0;
 }
 
 .form-input input {
   width: 100%;
   padding: 0 5px;
-  height: 40px;
-  font-size: 16px;
   border: none;
   background: none;
   outline: none;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .form-input label {
   position: absolute;
-  top: 50%;
-  left: 6px;
+  top: -20px;
+  left: 0px;
   color: #efeeed;
-  transform: translateY(-50%);
   font-size: 12px;
   pointer-events: none;
   transition: 0.5s;
 }
 
-.form-input input:focus ~ label {
-  top: -2px;
-  color: #333333;
-}
-
 .button {
   position: relative;
-  height: 60px;
 }
 
 .btn {
@@ -48,6 +41,7 @@ form {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
+  height: 60px;
 
   background-color: #00c8b3;
   width: 300px;
@@ -58,6 +52,7 @@ form {
   font-size: 20px;
   font-weight: 700;
   color: white;
+  cursor: pointer;
 }
 
 .button:hover {
