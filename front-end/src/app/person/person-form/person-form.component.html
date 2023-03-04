@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+  <div class="form">
+    <div class="form-input">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        id="name"
+      />
+      <label for="name">Nome completo (sem abreviações)</label>
+    </div>
+  </div>
+  <div class="form">
+    <div class="form-input">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="cpf"
+        id="cpf"
+      />
+      <label for="cpf">CPF</label>
+    </div>
+  </div>
+  <div class="form">
+    <div class="form-input">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="phone"
+        id="phone"
+      />
+      <label for="phone">Telefone</label>
+    </div>
+  </div>
+  <div class="form">
+    <div class="form-input">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+        id="email"
+      />
+      <label for="email">E-mail</label>
+    </div>
+  </div>
+  <div class="button">
+    <button class="btn" (click)="onSubmit()"></button>
+  </div>
+</form>
+
+
