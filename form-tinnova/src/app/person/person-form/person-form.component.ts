@@ -1,6 +1,7 @@
+import { Person } from './../person';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Person } from '../person';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -10,29 +11,26 @@ import { PersonService } from '../person.service';
 })
 export class PersonFormComponent {
 
-  form!: FormGroup
-
   person!: Person
+
+  form = this.fb.group({
+    name: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+    cpf: ["", Validators.required],
+    phone: ["", [Validators.required]],
+    email: ["", [Validators.required, Validators.email]]
+  })
 
   constructor(
     private fb: FormBuilder,
-    private personService: PersonService
+    private personService: PersonService,
+    private route: Router
   ) {}
 
   ngOnInit() {
-    this.form = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      cpf: [null, Validators.required],
-      phone: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.email]]
-    })
+    if(this.route.url.split('/')[2] === 'editar') {}
   }
 
-  onSubmit() {
-    this.personService.postPerson(this.person).subscribe(dados =>
-      {
-        console.log(dados)
-        this.form.reset()
-      })
+  cadastrar() {
+    this.personService.postPerson(this.person)
   }
 }
