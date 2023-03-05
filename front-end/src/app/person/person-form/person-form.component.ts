@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Person } from './../person';
 import { PersonService } from '../person.service';
@@ -17,12 +17,14 @@ export class PersonFormComponent {
 
   submitted: boolean = false;
 
+  isLoading: boolean = false
+
   @Input() formType: string = ""
 
   form = this.fb.group({
     name: [
       '',
-      [Validators.required, Validators.minLength(3), Validators.maxLength(20)],
+      [Validators.required, Validators.minLength(3)],
     ],
     cpf: ['', Validators.required],
     phone: ['', [Validators.required]],
@@ -36,6 +38,7 @@ export class PersonFormComponent {
   ) {}
 
   ngOnInit() {
+    console.log(this.form)
     if (this.route.url.split('/')[1] === 'editar') {
       const people = this.personService.getPeople();
 
@@ -64,11 +67,16 @@ export class PersonFormComponent {
         email: this.form.value.email as string,
       };
 
-      if (this.route.url.split('/')[2] === 'editar') {
-        this.personService.editPerson(novoCadastro);
-      } else {
-        this.personService.postPerson(novoCadastro);
+      this.isLoading = true
+
+      setTimeout(() =>  {
+        this.formType === "Editar" ? this.personService.editPerson(novoCadastro) : this.personService.postPerson(novoCadastro)
+
+        this.route.navigate(['/lista'])
+
+        this.isLoading = false
       }
+      , 2000)
     }
   }
 }

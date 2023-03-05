@@ -1,50 +1,61 @@
 <form [formGroup]="form">
   <div class="form">
     <div class="form-input">
+      <label for="name">Nome completo (sem abreviações)</label>
       <input
         type="text"
         class="form-control"
         formControlName="name"
         id="name"
       />
-      <label for="name">Nome completo (sem abreviações)</label>
+      <small *ngIf="form.controls.name.touched && !form.controls.name.valid">Campo obrigatório e no mínimo 3 caracteres.</small>
     </div>
   </div>
   <div class="form">
     <div class="form-input">
+      <label for="cpf">CPF</label>
       <input
         type="text"
         class="form-control"
         formControlName="cpf"
         id="cpf"
+        mask="000-000-000.00"
       />
-      <label for="cpf">CPF</label>
+      <small *ngIf="form.controls.cpf.touched && !form.controls.cpf.valid">Campo obrigatório.</small>
     </div>
   </div>
   <div class="form">
     <div class="form-input">
+      <label for="phone">Telefone</label>
       <input
         type="text"
         class="form-control"
         formControlName="phone"
         id="phone"
+        mask="(00) 00000-0000"
       />
-      <label for="phone">Telefone</label>
+      <small *ngIf="form.controls.phone.touched && !form.controls.phone.valid">Campo obrigatório.</small>
     </div>
   </div>
   <div class="form">
     <div class="form-input">
+      <label for="email">E-mail</label>
       <input
         type="text"
         class="form-control"
         formControlName="email"
         id="email"
       />
-      <label for="email">E-mail</label>
+      <small *ngIf="form.controls.email.touched && !form.controls.email.valid">Campo obrigatório.</small>
     </div>
   </div>
   <div class="button">
-    <button class="btn" (click)="onSubmit()"></button>
+    <button class="btn" (click)="onSubmit()" [disabled]="!form.valid">
+      <div *ngIf="!isLoading;else templateName">{{formType}}</div>
+      <ng-template #templateName>
+        <div class="loader"></div>
+      </ng-template>
+    </button>
   </div>
 </form>
 

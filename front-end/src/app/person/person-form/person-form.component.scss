@@ -1,35 +1,34 @@
 form {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 320px;
+  padding-top: 30px;
+  margin: auto;
+}
+
+.form {
+  padding-top: 20px;
+  small {
+    color: red;
+  }
 }
 
 .form-input {
-  position: relative;
-  border-bottom: 1px solid #000000;
-  margin: 40px 0;
+  input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    font-size: 14px;
+    font-weight: 700;
+  }
 }
 
-.form-input input {
-  width: 100%;
-  padding: 4px 5px;
-  border: none;
-  background: none;
-  outline: none;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.form-input label {
-  position: absolute;
-  top: -20px;
-  left: 0px;
-  color: #efeeed;
-  font-size: 12px;
-  pointer-events: none;
-  transition: 0.5s;
+.form-input {
+  label {
+    color: #efeeed;
+    font-size: 12px;
+  }
 }
 
 .button {
@@ -37,18 +36,12 @@ form {
 }
 
 .btn {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  height: 60px;
-
   background-color: #00c8b3;
-  width: 300px;
+  width: 320px;
   height: 50px;
   border-radius: 25px;
   border: none;
-
+  margin-top: 30px;
   font-size: 20px;
   font-weight: 700;
   color: white;
@@ -63,6 +56,28 @@ form {
 .btn:disabled {
   color: #dddcdc;
   background-color: #f6f6f6;
+  cursor: default;
 }
 
+.loader {
+  position: absolute;
+  top: 44%;
+  left: 44%;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #00c8b3;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border-bottom: 1px solid red;
+  background: none;
+  outline: none;
+}

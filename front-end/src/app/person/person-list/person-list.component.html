@@ -6,10 +6,10 @@
         <p>Nome:</p> {{ person.name }}
       </div>
       <div class="item-list" >
-        <p>CPF:</p> {{ person.cpf }}
+        <p>CPF:</p> {{ person.cpf | mask: '000.000.000-00' }}
       </div>
       <div class="item-list">
-        <p>Telefone:</p> {{ person.phone }}
+        <p>Telefone:</p>{{ person.phone | mask: '(00) 00000-0000'}}
       </div>
       <div class="item-list">
         <p>E-mail:</p> {{ person.email }}
