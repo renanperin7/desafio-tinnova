@@ -2,9 +2,8 @@
 
 <h3>Como inicializar a aplicação</h3>
 
-<p>Esta aplicação foi feita com angular, então ele deve estar instalado em sua máquina, caso não esteja
-    instalado, use o comando <STRONG>npm install -g @angular/cli</STRONG> e assim será possível iniciar 
-    a aplicação em sua máquina, a partir do comando <STRONG>ng serve</STRONG>
+<p>
+    O aplicativo foi desenvolvido usando o Angular e, portanto, é necessário tê-lo instalado em sua máquina local para executá-lo. Caso você não tenha o Angular instalado, pode fazê-lo usando o comando "<STRONG>npm install -g @angular/cli</STRONG>". Isso instalará o Angular CLI globalmente em sua máquina, permitindo que você crie e execute aplicativos Angular usando o comando "ng". Depois de instalar o Angular, você pode iniciar o aplicativo usando o comando "<STRONG>ng serve</STRONG>" no terminal.
 </p>
 
 <h4>Tecnologias utilizadas</h4>
