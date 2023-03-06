@@ -6,7 +6,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin: auto;
   height: 60px;
   width: 1500px;
@@ -19,11 +18,9 @@ header {
   font-weight: 500;
   color: #ffffff;
   text-decoration: none;
-  padding-right: 20px;
+  margin-right: 8px;
   }
-}
 
-.nav {
   a:hover {
   color: #006359;
   }
@@ -32,12 +29,45 @@ header {
 .title {
   color: #ffffff;
   font-size: 32px;
+    a {
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #006359;
+    }
 }
 
-.title {
-  a {
-  font-weight: 700;
-  color: #ffffff;
-  text-decoration: none;
+@media (max-width: 1550px) {
+  .navbar {
+    width: 800px;
   }
 }
+
+@media (max-width: 800px) {
+  .navbar {
+    width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 500px;
+    height: 80px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .navbar {
+    width: 300;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    margin-top: 8px;
+  }
+}
+

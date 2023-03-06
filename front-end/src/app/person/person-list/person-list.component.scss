@@ -7,6 +7,7 @@
   color:#008376;
   font-size: 28px;
   border-bottom: 1px solid black;
+  margin-top: 20px;
 }
 
 .container-list {
@@ -52,5 +53,56 @@
     font-weight: 500;
     margin: 4px;
     color: #008376;
+  }
+}
+
+@media (max-width: 1550px) {
+  .container {
+    margin: auto;
+    width: 800px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    margin: auto;
+    width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: auto;
+    width: 500px;
+    height: 80px;
+  }
+  .container-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-list {
+    margin-bottom: 4px;
+  }
+  .buttons {
+    margin-bottom: 4px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .container {
+    margin: auto;
+    width: 300px;
+    height: 80px;
+  }
+  .container-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-list {
+    margin-bottom: 4px;
+  }
+  .buttons {
+    margin-bottom: 4px;
   }
 }
